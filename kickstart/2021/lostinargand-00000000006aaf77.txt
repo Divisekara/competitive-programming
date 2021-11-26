@@ -1,0 +1,80 @@
+from collections import deque
+
+def check(i, j):
+    if i >= 0 and j >= 0 and i < R and j < C:
+        return 1
+    else:
+        return 0
+
+def solve():
+    q = deque()
+    mem = set()
+    for i in range(R):
+        for j in range(C):
+            if check(i, j) and check(i + 1, j):
+                val = abs(grid[i][j] - grid[i + 1][j])
+                if val > 1 and ((i, j, i + 1, j) not in mem) and ((i + 1, j, i, j) not in mem):
+                    q.append((i, j, i + 1, j))
+                    mem.add((i, j, i + 1, j))
+            if check(i, j) and check(i - 1, j):
+                val = abs(grid[i][j] - grid[i - 1][j])
+                if val > 1 and ((i, j, i - 1, j) not in mem) and ((i - 1, j, i, j) not in mem):
+                    q.append((i, j, i - 1, j))
+                    mem.add((i, j, i - 1, j))
+            if check(i, j) and check(i, j + 1):
+                val = abs(grid[i][j] - grid[i][j + 1])
+                if val > 1 and ((i, j, i, j + 1) not in mem) and ((i, j + 1, i, j) not in mem):
+                    q.append((i, j, i, j + 1))
+                    mem.add((i, j, i, j + 1))
+            if check(i, j) and check(i, j - 1):
+                val = abs(grid[i][j] - grid[i][j - 1])
+                if val > 1 and ((i, j, i, j - 1) not in mem) and ((i, j - 1, i, j) not in mem):
+                    q.append((i, j, i, j - 1))
+                    mem.add((i, j, i, j - 1))
+    res = 0
+    while(q):
+        i, j, x, y = q.popleft()
+        mem.remove((i, j, x, y))
+        val = abs(grid[i][j] - grid[x][y])
+        if val > 1:
+            if grid[i][j] > grid[x][y]:
+                res += grid[i][j] - grid[x][y] - 1
+                grid[x][y] += grid[i][j] - grid[x][y] - 1
+                i = x
+                j = y
+            else:
+                res += grid[x][y] - grid[i][j] - 1
+                grid[i][j] += grid[x][y] - grid[i][j] - 1
+        else:
+            continue
+        # Check
+        if check(i, j) and check(i + 1, j):
+            val = abs(grid[i][j] - grid[i + 1][j])
+            if val > 1 and ((i, j, i + 1, j) not in mem) and ((i + 1, j, i, j) not in mem):
+                q.append((i, j, i + 1, j))
+                mem.add((i, j, i + 1, j))
+        if check(i, j) and check(i - 1, j):
+            val = abs(grid[i][j] - grid[i - 1][j])
+            if val > 1 and ((i, j, i - 1, j) not in mem) and ((i - 1, j, i, j) not in mem):
+                q.append((i, j, i - 1, j))
+                mem.add((i, j, i - 1, j))
+        if check(i, j) and check(i, j + 1):
+            val = abs(grid[i][j] - grid[i][j + 1])
+            if val > 1 and ((i, j, i, j + 1) not in mem) and ((i, j + 1, i, j) not in mem):
+                q.append((i, j, i, j + 1))
+                mem.add((i, j, i, j + 1))
+        if check(i, j) and check(i, j - 1):
+            val = abs(grid[i][j] - grid[i][j - 1])
+            if val > 1 and ((i, j, i, j - 1) not in mem) and ((i, j - 1, i, j) not in mem):
+                q.append((i, j, i, j - 1))
+                mem.add((i, j, i, j - 1))
+    return res
+
+T = int(input())
+for t in range(1, T + 1):
+    R, C = list(map(int, input().split()))
+    grid = []
+    for r in range(R):
+        grid.append(list(map(int, input().split())))
+    ans = solve()
+    print("Case #" + str(t) + ": " + str(ans))

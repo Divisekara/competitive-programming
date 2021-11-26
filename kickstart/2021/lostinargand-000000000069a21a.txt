@@ -1,0 +1,16 @@
+
+def solve():
+    score = 0
+    for i in range(N//2):
+        if S[i] != S[N - i - 1]:
+            score += 1
+    return abs(K - score)
+
+
+
+T = int(input())
+for t in range(1, T + 1):
+    N, K = list(map(int, input().split()))
+    S = input()
+    ans = solve()
+    print("Case #" + str(t) + ": " + str(ans))

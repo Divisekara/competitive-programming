@@ -9,13 +9,17 @@ using namespace std;
 // this is a function Every computer program starts with a function called main.
 // Even in python we start the program using main
 
-//  int  means what types of data we are working with inside this function. 
+//  int  means what types of data we are working with inside this function.
+
+// we can add many functions as we want but only one main function.
 
 int main()
 {
-    // inside the curly bracers we have statements. All functions are made of statements. 
-    // every statement needs to end with a semi colan. 
-    // cout means print something on the screen as the output 
+    // inside the curly bracers we have statements. All functions are made of statements.
+    // every statement needs to end with semi colan
+    // cout means print something on the screen as the output
     cout << "Hello asitha" << endl;
     return 0;
 }
+
+// sample comment

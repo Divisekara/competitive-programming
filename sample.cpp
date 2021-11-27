@@ -13,6 +13,12 @@ using namespace std;
 
 // we can add many functions as we want but only one main function.
 
+// computer programs works top to down.
+// so we need to add this function to before the main function
+// but we can do function prototyping to script the functions after the main function
+
+void printSomething(); // this is function prototyping
+
 int main()
 {
     // inside the curly bracers we have statements. All functions are made of statements.
@@ -33,28 +39,54 @@ int main()
     int b;
     int answer;
 
-    cout << "Insert a: " << endl;
-    cin >> a;
-    cout << "Insert b: " << endl;
-    cin >> b;
-    answer = a + b;
-    cout << "The answer is: " << answer << endl;
+    // cout << "Insert a: " << endl;
+    // cin >> a;
+    // cout << "Insert b: " << endl;
+    // cin >> b;
+    // answer = a + b;
+    // cout << "The answer is: " << answer << endl;
 
-    // addition 
-    int a = 3+4;
+    // addition
+    int c = 3 + 4;
     // subtraction
-    int b = 5-3;
+    int d = 5 - 3;
     // multiplication
-    int c = a*b;
+    int e = a * b;
     // division
-    int d = 10/3;
+    int f = 10 / 3;
     // modulo division
-    int e = 10%3;
-     
+    int i = 10 % 3;
+
+    // bodmas convention is applied to any arithmetic expression.
+
+    if (c > 5)
+    {
+        cout << "Asitha is awesome";
+    }
+    else if (c < 5)
+    {
+        cout << "Asitha is freaking awesome";
+    }
+    else
+    {
+        cout << "Asitha is amazingly mazmerizing awesome";
+    }
+
+    printSomething();
     return 0;
 }
 
-// start with 36.31
+void printSomething()
+{
+    cout << endl
+         << "print something";
+}
+
+// lets make functions
+// if we want to return a number from the funtion we need to define as int function(){}
+// if we dont want to return anything back froma a funtion then we can use void insetead of int or types
+
+// start with 1.02
 
 // << is the insertion operator
 // endl after insertion operator in cout return the next line of printing into a new line.
@@ -64,4 +96,4 @@ int main()
 // for reading the inputs we can use cin and extraction operator
 // dont write the variables twice.
 // variable can be overwritten.
-// 
+// logic operators - < , > , <=, >=, =, !=,

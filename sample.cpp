@@ -17,7 +17,9 @@ using namespace std;
 // so we need to add this function to before the main function
 // but we can do function prototyping to script the functions after the main function
 
-void printSomething(); // this is function prototyping
+void printSomething();        // this is function prototyping
+void printCrap(int x);        // this is function prototyping
+int addNumbers(int x, int y); // this is function prototyping
 
 int main()
 {
@@ -72,7 +74,12 @@ int main()
         cout << "Asitha is amazingly mazmerizing awesome";
     }
 
-    printSomething();
+    // printSomething();
+    // printCrap(1779);
+    int out = addNumbers(100, 1);
+    cout << endl
+         << "answer is : " << out << endl;
+
     return 0;
 }
 
@@ -80,6 +87,18 @@ void printSomething()
 {
     cout << endl
          << "print something";
+}
+
+int addNumbers(int x, int y)
+{
+    int answer = x + y;
+    return answer;
+}
+
+void printCrap(int x)
+{
+    cout << endl
+         << "Asithas favourite number is" << x << endl;
 }
 
 // lets make functions

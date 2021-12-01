@@ -13,7 +13,7 @@ public:
     void coolSaying()
     {
         cout << "This is awesome man." << endl;
-    }
+    } 
 };
 
 // access specifiers or access modifiers are keywords in object oriented languages that set the acccessibility

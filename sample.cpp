@@ -76,6 +76,9 @@ int main()
 
     // printSomething();
     // printCrap(1779);
+    // we can also print the output of the addNumbers function directly
+    cout << endl
+         << "Printing directly : " << addNumbers(10, 12);
     int out = addNumbers(100, 1);
     cout << endl
          << "answer is : " << out << endl;

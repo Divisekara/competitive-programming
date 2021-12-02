@@ -13,7 +13,13 @@ using namespace std;
 class AsithaClass // it is good practice to start the name of the class with capital letter and then camel case convention
 {
 public:
-    string name; // this is not the correct way to make variables. 
+    string name; // this is not the correct way to make variables.
+    // making class varibales under public is not a good practice.
+    // whenever you make a variable under public it is vulnerable to the program to mess up.
+    // best way to make the class variables are private. But I previously said that making varibales private
+    // will block the access of main function from that variables.
+    // Nothing outside of this varibales should not give access to the outside world.
+    // so we make a public class inside this class that have the access to this variables.
     void coolSaying()
     {
         cout << "This is awesome man." << endl;

@@ -1,5 +1,7 @@
 // classes is a suitable way to group bunch of functions, variables together
 
+// when you create a file make sure to rename the file where no sapace is there.
+
 // following is the way to declare a class
 // inside the curly braces you have the body of the class.
 
@@ -13,7 +15,7 @@ public:
     void coolSaying()
     {
         cout << "This is awesome man." << endl;
-    } 
+    }
 };
 
 // access specifiers or access modifiers are keywords in object oriented languages that set the acccessibility
@@ -24,5 +26,6 @@ public:
 
 int main()
 {
-    AsithaClass
+    AsithaClass AsithaObject;
+    AsithaObject.coolSaying();
 }

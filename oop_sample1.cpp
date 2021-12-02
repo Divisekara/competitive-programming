@@ -6,12 +6,14 @@
 // inside the curly braces you have the body of the class.
 
 #include <iostream>
+#include <string> // in order to use the string variables we have to include the string file
 
 using namespace std;
 
 class AsithaClass // it is good practice to start the name of the class with capital letter and then camel case convention
 {
 public:
+    string name; // this is not the correct way to make variables. 
     void coolSaying()
     {
         cout << "This is awesome man." << endl;
@@ -28,4 +30,9 @@ int main()
 {
     AsithaClass AsithaObject;
     AsithaObject.coolSaying();
+    AsithaObject.name = "Asitha Divisekara";
+    cout << endl
+         << AsithaObject.name << endl;
 }
+
+// lets learn how to put variables into the classes. the proper way.

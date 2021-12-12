@@ -14,7 +14,7 @@ public:
     }
     // no one will print something under constructor if so slap him.
     // constructors is used for getting varibales intial values
-    // whenever you have bunch of variables and you have to set them equal to values intially 
+    // whenever you have bunch of variables and you have to set them equal to values intially
     void setName(string x)
     {
         name = x;
@@ -33,6 +33,6 @@ private:
 int main()
 {
     AsithaClass asi("this is sample text");
-    cout << asi.getName() << endl
-         << asi.name;
+    cout << asi.getName() << endl;
+    // return 0;
 }

@@ -4,17 +4,16 @@ import time
 start_time = time.time()
 
 def fib(n):
-    if(n<2):
+    if(n<=2):
         f = 1
     else:
         f = fib(n-1) + fib(n-2)
     return f
 
-term = fib(35)
-print(term)
-
+term = fib(2)
 end_time = time.time()
 
+print(term)
 print("{:.10f}ms".format((end_time-start_time)*1000))
 
 

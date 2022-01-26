@@ -1,7 +1,6 @@
-from threading import Timer
-
 import time
 start_time = time.time()
+# bigO(2^n)
 
 def fib(n):
     if(n<=2):
@@ -10,7 +9,7 @@ def fib(n):
         f = fib(n-1) + fib(n-2)
     return f
 
-term = fib(2)
+term = fib(40)
 end_time = time.time()
 
 print(term)
